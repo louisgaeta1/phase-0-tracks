@@ -34,11 +34,12 @@ figcaption {
 body {
   max-width: 960px;
   min-width: 400px;
+  margin: 0 auto;
 }
 
 #external-links {
   width: 20%;
-  display:inline-block;
+  display: inline-block;
   vertical-align: top;
 }
 
