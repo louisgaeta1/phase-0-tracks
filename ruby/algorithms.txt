@@ -15,3 +15,17 @@ Are you going up or down?
 		change direction to up
 
 
+Deciding what to eat
+ Is there food/leftovers in the house?
+ 	If yes eat that
+ 	If no go to typical delivery places list
+
+ for each item in the list
+ 	Did you eat this in the past few days?
+ 		If yes go to next item
+ 		If no Are you in the mood for this?
+ 			If no continue to next item
+ 			If yes can you afford it right now?
+ 				If yes order it and eat
+ 				If no continue to next list item
+ 				
