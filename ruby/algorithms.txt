@@ -1,0 +1,17 @@
+ELEVATOR
+
+Are you going up or down?
+	Up
+		For Each floor of the building above the current
+			Is the button pressed?
+				If yes go to that floor
+				if no check the next highest floor
+		Change Direction to down
+	Down
+		For each floor of the building below the current
+			Is the button pressed?
+				If yes go to that floor
+				if no check the floor below
+		change direction to up
+
+
