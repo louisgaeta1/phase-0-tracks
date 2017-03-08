@@ -1,4 +1,3 @@
-
 name = nil
 loop do
 	puts "What is the hamster's name?"
@@ -37,14 +36,16 @@ age = gets.chomp
 
 if age == ""
 	age = nil
+else
+	age = age.to_i
 end
 
 
-age = age.to_i
 
 
-puts name
-puts volume
-puts color
-puts adoption
-puts age
+
+puts "The hamster's name is #{name}"
+puts "Preferred volume level: #{volume}" 
+puts "Color: #{color}"
+puts "Adoption Candidate? #{adoption}"
+puts "Approximate Age: #{age}"
