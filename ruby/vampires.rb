@@ -39,7 +39,7 @@ loop do
 	end
 end
 
-#puts "#{age_check} && (#{gb} || #{health}) == #{age_check && (gb || health)}"
+
 
 result="Results inconclusive."
 if age_check && (gb || health)
@@ -53,6 +53,16 @@ if !age_check && !gb && !health
 end
 if name1 == "Drake Cula" || name1 == "Tu Fang"
 	result= "Clearly a vampire."
+end
+
+puts "Please list any allergies you have. Enter 'done' when you are finished."
+allergies=nil
+while allergies != "done"
+	allergies = gets.chomp
+	if allergies == "sunshine"
+		result="Probably a vampire."
+		break
+	end
 end
 
 
