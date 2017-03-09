@@ -1,7 +1,13 @@
+puts "How many employees will be processed?"
+employees=gets.chomp.to_i
+
+i=0
+while i < employees
 puts "What is your name?"
 name1 = gets.chomp
-puts "How old are you? What year were you born?"
+puts "How old are you?"
 age = gets.chomp 
+puts "What year were you born?"
 year =gets.chomp
 
 age_check = (age.to_i == 2017-year.to_i) 
@@ -51,3 +57,6 @@ end
 
 
 puts result
+
+i+=1
+end
