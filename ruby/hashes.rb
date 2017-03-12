@@ -29,3 +29,22 @@ client_info[:decor_theme]=gets.chomp
 
 p client_info
 
+puts "What value would you like to update?"
+key = gets.chomp
+
+if key != "none"
+
+	key = key.to_sym
+
+	puts "What would you like to change it to?"
+	if key == :age || key == :children
+		update = gets.chomp.to_i
+	else
+		update = gets.chomp
+	end
+
+	client_info[key] = update
+
+	p client_info
+end
+
