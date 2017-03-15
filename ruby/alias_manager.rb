@@ -67,18 +67,24 @@ end
 def next_consonant(char)
 	consonants="bcdfghjklmnpqrstvwxyz".chars
 	if char=='z'
-		nextc='b'
+		nextc ='b'
 		return nextc
 	end
 	consonants.each_with_index do |consonant,index|
 		if char == consonant
-			nextc = consonant[index+1]
+			nextc = consonants[index+1]
 		end
 	end
 	return nextc
 end
 
 =begin
+puts next_consonant('t')
+puts next_consonant('r')
+puts next_consonant('v')
+
+
+
 puts next_vowel('a')
 puts next_vowel('e')
 puts next_vowel('i')
