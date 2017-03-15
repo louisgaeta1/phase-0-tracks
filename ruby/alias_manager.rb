@@ -78,31 +78,36 @@ def next_consonant(char)
 	return nextc
 end
 
-puts "Please enter a name:"
-input = gets.chomp
-swapped = swap(input)
-puts swapped
 
-names = swapped.split(' ')
+loop do
+	puts "Please enter a name:"
+	input = gets.chomp
 
-names.map! do |name|
-	characters = name.chars
-	characters.map! do |char|
-		if char.downcase == 'a' || char.downcase == 'e'|| char.downcase == 'i'|| char.downcase == 'o'|| char.downcase == 'u'
-			char = next_vowel(char.downcase)
-		else
-			char = next_consonant(char.downcase)
-		end
+	if input == 'quit'
+		break
 	end
-	name = characters.join('').capitalize
+	
+	swapped = swap(input)
+
+	names = swapped.split(' ')
+
+	names.map! do |name|
+		characters = name.chars
+		characters.map! do |char|
+			if char.downcase == 'a' || char.downcase == 'e'|| char.downcase == 'i'|| char.downcase == 'o'|| char.downcase == 'u'
+				char = next_vowel(char.downcase)
+			else
+				char = next_consonant(char.downcase)
+			end
+		end
+		name = characters.join('').capitalize
+	end
+
+	result = names.join(' ')
+
+
+	puts result
 end
-
-result = names.join(' ')
-
-
-puts result
-
-
 
 
 
