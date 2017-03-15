@@ -49,7 +49,44 @@ def swap(name)
 	result
 end
 
+def next_vowel(char)
+	vowels=['a','e','i','o','u']
+	nextv = nil
+	if char == 'u'
+		nextv = 'a'
+		return nextv
+	end
+	vowels.each_with_index do |vowel,index|
+		if char == vowel
+			nextv = vowels[index+1]
+		end
+	end
+	return nextv
+end
+
+def next_consonant(char)
+	consonants="bcdfghjklmnpqrstvwxyz".chars
+	if char=='z'
+		nextc='b'
+		return nextc
+	end
+	consonants.each_with_index do |consonant,index|
+		if char == consonant
+			nextc = consonant[index+1]
+		end
+	end
+	return nextc
+end
+
+=begin
+puts next_vowel('a')
+puts next_vowel('e')
+puts next_vowel('i')
+puts next_vowel('o')
+puts next_vowel('u')
+
 
 puts "Please enter a name:"
 name = gets.chomp
 puts swap(name)
+=end
