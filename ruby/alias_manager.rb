@@ -78,6 +78,8 @@ def next_consonant(char)
 	return nextc
 end
 
+originals = []
+aliases = []
 
 loop do
 	puts "Please enter a name:"
@@ -86,7 +88,9 @@ loop do
 	if input == 'quit'
 		break
 	end
-	
+
+	originals.push(input)
+
 	swapped = swap(input)
 
 	names = swapped.split(' ')
@@ -105,8 +109,13 @@ loop do
 
 	result = names.join(' ')
 
+	aliases.push(result)
 
-	puts result
+	#puts result
+end
+
+originals.each_with_index do |name, index|
+	puts "#{name} is actually #{aliases[index]}"
 end
 
 
