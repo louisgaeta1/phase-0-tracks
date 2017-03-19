@@ -58,7 +58,7 @@ example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer n
 end
 
 
-
+#
 
 =begin
 claus = Santa.new
