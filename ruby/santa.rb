@@ -4,7 +4,7 @@ class Santa
 	attr_accessor :gender
 
 	def initialize(gender,ethnicity)
-		puts "Initializing Santa instance ..."
+		#puts "Initializing Santa instance ..."
 		@gender = gender
 		@ethnicity = ethnicity
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
@@ -46,6 +46,20 @@ class Santa
 =end
 end
 
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+10.times do |i|
+	santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+	rand(140).times do 
+		santa.celebrate_birthday
+	end
+	puts "Santa ##{i+1} is a #{santa.age} year old #{santa.ethnicity} #{santa.gender}."
+end
+
+
+
+
 =begin
 claus = Santa.new
 
@@ -59,7 +73,7 @@ example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer n
 example_genders.length.times do |i|
   santas << Santa.new(example_genders[i], example_ethnicities[i])
 end
-=end
+
 
 santa = Santa.new("male", "white")
 puts "Santa is currently a #{santa.age} year old #{santa.ethnicity} #{santa.gender}."
@@ -73,4 +87,4 @@ end
 santa.gender = "transgender"
 
 puts "Santa is currently a #{santa.age} year old #{santa.ethnicity} #{santa.gender}."
-
+=end
