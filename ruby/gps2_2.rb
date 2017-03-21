@@ -33,3 +33,24 @@
 	#Print each key and value: **Key**: x**Value**
 # output: **Key**: x**Value** for each item in the list
 
+
+
+def create_list(items)
+	grocery_list = {}
+	key_array = items.split(' ')
+
+	key_array.each do |item|
+		grocery_list[item] = 1
+	end
+	#print_list(grocery_list)
+
+	grocery_list
+end
+
+def add_item(list,name,quantity=1)
+	list[name]=quantity
+	list
+end
+
+p groceries = create_list("carrots apples cereal pizza")
+p add_item(groceries,"bananas")
