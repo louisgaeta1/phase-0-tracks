@@ -19,6 +19,9 @@ class Puppy
   	human_years * 7
   end
 
+  def sneeze
+  	puts "Achoo!!"
+  end
 
 end
 
@@ -28,3 +31,4 @@ fido.fetch("bone")
 fido.speak(5)
 fido.roll_over
 puts "Fido is #{fido.dog_years(4)} years old in dog years."
+fido.sneeze
