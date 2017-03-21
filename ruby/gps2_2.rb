@@ -47,7 +47,7 @@ def create_list(items)
 end
 
 def add_item(list,name,quantity=1)
-	list[name]=quantity
+	list[name] = quantity
 	list
 end
 
@@ -75,4 +75,31 @@ remove_item(groceries,"cereal")
 update_quantity(groceries,"bananas",5)
 
 print_list(groceries)
+
+=begin
+What did you learn about pseudocode from working on this challenge?
+
+I learned about good structure for psuedocode. Listing input, output, and the steps in between easily translates to working code.
+
+What are the tradeoffs of using arrays and hashes for this challenge?
+
+Using arrays would require two arrays or nested arrays to store both the item and the value. Using a hash makes more sense since you can associate the item with a quantity within the same structure
+
+What does a method return?
+
+A method will implicitly return the last value specified within it. It can also return something specified within the method with the return keyword.
+
+What kind of things can you pass into methods as arguments?
+
+variables, data structures, blocks, other methods.
+
+How can you pass information between methods?
+
+You can pass a method into another method or call a method within a method.
+
+What concepts were solidified in this challenge, and what concepts are still confusing?
+
+Iterating through hashes is more solidified. Learning hash methods is still a bit confusing for me.
+	
+=end
 
