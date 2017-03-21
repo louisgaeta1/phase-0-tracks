@@ -42,8 +42,7 @@ def create_list(items)
 	key_array.each do |item|
 		grocery_list[item] = 1
 	end
-	#print_list(grocery_list)
-
+	print_list(grocery_list)
 	grocery_list
 end
 
@@ -52,5 +51,28 @@ def add_item(list,name,quantity=1)
 	list
 end
 
-p groceries = create_list("carrots apples cereal pizza")
-p add_item(groceries,"bananas")
+def remove_item(list,name)
+	list.delete_if{|key| key == name}
+end
+
+def update_quantity(list,name,quantity)
+	if list.has_key?(name)
+		list[name] = quantity
+	end
+	list
+end
+
+def print_list(list)
+	list.each do |keys, values|
+		puts "#{keys}: x#{values}"
+	end
+end
+
+
+groceries = create_list("carrots apples cereal pizza")
+add_item(groceries,"bananas")
+remove_item(groceries,"cereal")
+update_quantity(groceries,"bananas",5)
+
+print_list(groceries)
+
