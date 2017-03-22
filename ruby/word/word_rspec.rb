@@ -4,7 +4,7 @@ describe Game do
 	let(:game) {Game.new("cash")}
 
 	it "initalizes the game" do
-		expect (game.answer).to eq ["c","a","s","h"]
+		expect (game.answer).should match_array(["c","a","s","h"])
 	end
 
 	it "populates answer display" do

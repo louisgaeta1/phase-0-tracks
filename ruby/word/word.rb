@@ -69,4 +69,22 @@ if solved is false
 
 =end
 
+class Game
+	attr_reader :answer, :blanks
+	attr_accessor 
+
+	def initialize(word)
+		@guesses = 0
+		@answer = word.split('')
+		@guessed_letters = []
+		@solved = false
+		@blanks = []
+		@answer.each do 
+			@blanks.push("_")
+		end
+	end
+
+
+end
+
 
