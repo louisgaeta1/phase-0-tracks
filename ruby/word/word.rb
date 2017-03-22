@@ -84,7 +84,14 @@ class Game
 		end
 	end
 
+	def display
+		puts @blanks.join(' ')
+		@blanks.join(' ')
+	end
+
+
 
 end
+
 
 
