@@ -59,7 +59,8 @@ Ask for input of a letter
 check that letter
 check if solved
 	if solved break
-increment number of guesses 
+check if letter is among the guessed
+if not increment number of guesses 
 end loop
 
 if solved is true
@@ -89,6 +90,18 @@ class Game
 		@blanks.join(' ')
 	end
 
+	def check_letter(letter)
+		@guessed_letters.push(letter)
+		flag = false
+		answer.each_with_index do |aletter, index|
+			if aletter == letter
+				blanks[index] = letter
+				flag = true
+			end
+		end
+		return flag
+		end
+	end
 
 
 end
