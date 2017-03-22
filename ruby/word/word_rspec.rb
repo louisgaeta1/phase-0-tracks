@@ -19,8 +19,8 @@ describe Game do
 
 	it "prints the current guessed letters with blanks" do
 		expect(game.display).to eq ('_ _ _ _')
-		#game.check_letter("c")
-		#expect(game.display).to eq ('c _ _ _') 
+		game.check_letter("c")
+		expect(game.display).to eq ('c _ _ _') 
 	end
 
 	it "checks to see if the answer was solved" do

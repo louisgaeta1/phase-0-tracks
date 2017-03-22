@@ -100,7 +100,10 @@ class Game
 			end
 		end
 		return flag
-		end
+	end
+
+	def check_solved
+		!blanks.include?("_")
 	end
 
 
