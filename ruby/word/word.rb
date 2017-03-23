@@ -71,8 +71,8 @@ if solved is false
 =end
 
 class Game
-	attr_reader :answer, :blanks
-	attr_accessor 
+	attr_reader :answer, :blanks, :guessed_letters
+	attr_accessor :guesses
 
 	def initialize(word)
 		@guesses = 0
@@ -108,6 +108,29 @@ class Game
 
 
 end
+
+puts "Enter a word:"
+word = gets.chomp
+game = Game.new(word)
+
+until game.guesses == game.answer.length + 3
+	game.display
+	puts "Guess a letter"
+	letter = gets.chomp
+	if letter.length > 1
+		puts "Please guess only one letter at a time."
+		next
+	end
+	if !game.guessed_letters.include?(letter)
+		game.guesses += 1 
+	end
+	game.check_letter(letter)
+	break if game.check_solved
+	puts "#{game.guesses} guesses so far."
+end
+
+puts "Congratulations! You got #{game.blanks.join('')} in #{game.guesses} guesses!" if game.check_solved
+puts "Sorry, try again. The answer was #{word}." if !game.check_solved
 
 
 
