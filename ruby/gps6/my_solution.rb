@@ -81,3 +81,22 @@ print_all_states
 #=======================================================================
 # Reflection Section
 
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+
+# The enclosed hashes use symbols as the keys while the outside hash uses strings and arrow notation for key names.
+
+# What does require_relative do? How is it different from require?
+
+# Require_relative will include a file relative to the file path that the program is stored in. Require includes from the default Ruby path.
+
+# What are some ways to iterate through a hash?
+
+#Each and map methods can be used to iterate through a hash. 
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+
+#The variables used in the function calls were direct references to the attributes that were already accessible within the class.
+
+# What concept did you most solidify in this challenge?
+
+# Using case statements, refactoring code, keeping methods simple and only performing one task.
