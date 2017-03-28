@@ -38,6 +38,31 @@ function keyMatch(object1,object2){
 }
 
 
+// Random data function
+// define a function that takes in an integer for the array length
+// set iterator to 0
+// declare empty result array
+// declare string of the alphabet
+// until the iterator reaches the parameter length , incrementing by 1
+// 	generate a random string and add it to result array
+// end loop
+// return the result array
+
+function testData(results){
+	var data = [];
+	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	for (var i = 0; i < results; i ++){
+		var string = "";
+		for(var j = 0; j < Math.floor((Math.random()*10)+1); j++){
+			string += alphabet[Math.floor((Math.random()*26))];
+		}
+		data.push(string);
+	}
+	return data;
+}
+
+console.log(testData(3));
+
 // var input = ["longest phrase", "long phrase", "longer phrase"];
 // console.log(longestPhrase(input));
 
@@ -46,11 +71,11 @@ function keyMatch(object1,object2){
 
 
 
-var x = {name: "Lou", age: 24};
-var y = {name: "Carlo", age: 23};
-var z = {name: "Ryan", age: 23};
+// var x = {name: "Lou", age: 24};
+// var y = {name: "Carlo", age: 23};
+// var z = {name: "Ryan", age: 23};
 
 
-console.log(keyMatch(x,y));
-console.log(keyMatch(y,z));
-console.log(keyMatch(x,z));
+// console.log(keyMatch(x,y));
+// console.log(keyMatch(y,z));
+// console.log(keyMatch(x,z));
