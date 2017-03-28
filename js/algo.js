@@ -61,7 +61,13 @@ function testData(results){
 	return data;
 }
 
-console.log(testData(3));
+
+for (var i = 0; i < 10; i++){
+	data = testData(3);
+	console.log(data);
+	console.log("Longest Phrase is " + longestPhrase(data)+ '\n');
+}
+
 
 // var input = ["longest phrase", "long phrase", "longer phrase"];
 // console.log(longestPhrase(input));
