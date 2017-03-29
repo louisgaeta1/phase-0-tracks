@@ -17,5 +17,29 @@ var result = addProperties(names,colors);
 
 console.log(result);
 
+function Car(type,color,operational){
+	this.type = type;
+	this.color = color;
+	this.isOperational = operational;
+
+	this.canRev = function (){
+		if (this.isOperational){
+			console.log("Vroom Vroom");
+		}
+		else {
+			console.log("Whoops!");
+		};
+	}
+}
 
 
+nissan = new Car ("sedan","white",true);
+jeep = new Car ("SUV","black",false);
+
+nissan.canRev();
+jeep.canRev();
+
+
+for (i in result){
+	console.log(i + ': ' + result[i] )
+};
