@@ -39,3 +39,14 @@ The Legend of Zelda: Breath of the Wild|Nintendo Switch|true
 Nier: Automata|PC|false
 Horizon: Zero Dawn|Playstation 4|true
 Shovel Knight: Spectre of Torment|Nintendo Switch|false
+
+
+sqlite> SELECT games.name, consoles.name, games.exclusive FROM games LEFT JOIN consoles ON games.console_id = consoles.id;
+Resident Evil 7|Playstation 4|false
+The Legend of Zelda: Breath of the Wild|Nintendo Switch|true
+Nier: Automata|PC|false
+Horizon: Zero Dawn|Playstation 4|true
+Shovel Knight: Spectre of Torment|Nintendo Switch|false
+
+
+FULL and RIGHT joins are not supported.
