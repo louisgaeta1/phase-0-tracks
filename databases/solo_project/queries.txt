@@ -1,0 +1,41 @@
+sqlite> SELECT * FROM games;
+1|Resident Evil 7|false|1
+2|The Legend of Zelda: Breath of the Wild|true|2
+3|Nier: Automata|false|1
+4|Horizon: Zero Dawn|true|1
+5|Shovel Knight: Spectre of Torment|false|2
+6|Prey|false|3
+
+
+sqlite> UPDATE games SET console_id = 3 WHERE name = "Nier: Automata";
+sqlite> SELECT * FROM games;
+1|Resident Evil 7|false|1
+2|The Legend of Zelda: Breath of the Wild|true|2
+3|Nier: Automata|false|3
+4|Horizon: Zero Dawn|true|1
+5|Shovel Knight: Spectre of Torment|false|2
+6|Prey|false|3
+
+sqlite> SELECT * FROM games, consoles WHERE games.console_id = consoles.id;
+1|Resident Evil 7|false|1|1|Playstation 4
+2|The Legend of Zelda: Breath of the Wild|true|2|2|Nintendo Switch
+3|Nier: Automata|false|3|3|PC
+4|Horizon: Zero Dawn|true|1|1|Playstation 4
+5|Shovel Knight: Spectre of Torment|false|2|2|Nintendo Switch
+6|Prey|false|3|3|PC
+
+sqlite> SELECT games.name, consoles.name, games.exclusive FROM games JOIN consoles ON games.console_id = consoles.id;
+Resident Evil 7|Playstation 4|false
+The Legend of Zelda: Breath of the Wild|Nintendo Switch|true
+Nier: Automata|PC|false
+Horizon: Zero Dawn|Playstation 4|true
+Shovel Knight: Spectre of Torment|Nintendo Switch|false
+Prey|PC|false
+
+sqlite> DELETE FROM games WHERE name = "Prey";
+sqlite> SELECT games.name, consoles.name, games.exclusive FROM games JOIN consoles ON games.console_id = consoles.id;
+Resident Evil 7|Playstation 4|false
+The Legend of Zelda: Breath of the Wild|Nintendo Switch|true
+Nier: Automata|PC|false
+Horizon: Zero Dawn|Playstation 4|true
+Shovel Knight: Spectre of Torment|Nintendo Switch|false
