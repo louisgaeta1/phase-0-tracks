@@ -59,10 +59,14 @@ db.execute_batch(create_table_cmd)
 
 reviews = db.execute("SELECT businesses.name, reviews.stars, reviews.comment, users.first_name, users.last_name FROM reviews
 	JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id")
-p reviews;
+#p reviews;
 
 
-# reviews.each do |review|
-#  puts "#{kitten['name']} is #{kitten['age']}"
-# end
+reviews.each do |review|
+	stars = ''
+	review['stars'].times do
+		stars+= '*'
+	end 
+	puts "#{review['name']} - #{stars}\n#{review['first_name']} #{review['last_name']} - #{review['comment']}\n\n"
+end
 
