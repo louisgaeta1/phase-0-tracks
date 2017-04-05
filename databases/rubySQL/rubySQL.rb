@@ -2,6 +2,11 @@
 require 'sqlite3'
 require 'faker'
 
+def create_user(db, first_name, last_name)
+   db.execute("INSERT INTO users (first_name, last_name) VALUES (?, ?)", [first_name, last_name])
+end
+
+
 # create SQLite3 database
 db = SQLite3::Database.new("welp.db")
 db.results_as_hash = true
@@ -32,13 +37,9 @@ SQL
 db.execute_batch(create_table_cmd)
 
 
-# def create_kitten(db, name, age)
-#   db.execute("INSERT INTO kittens (name, age) VALUES (?, ?)", [name, age])
-# end
-
-# 10000.times do
-#   create_kitten(db, Faker::Name.name, 0)
-# end
+10.times do
+  create_user(db, Faker::Name.first_name, Faker::Name.last_name)
+end
 
 
 # kittens = db.execute("SELECT * FROM kittens")
