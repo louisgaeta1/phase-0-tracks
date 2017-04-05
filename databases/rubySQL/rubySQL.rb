@@ -10,6 +10,11 @@ def create_business(db,name)
 	db.execute("INSERT INTO businesses (name) VALUES (?)", [name])
 end
 
+def create_review(db)
+	db.execute("INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (?,?,?,?)",
+		[1+rand(5), Faker::Lorem.sentence, 1+rand(20), 1+rand(20)])
+end
+
 # create SQLite3 database
 db = SQLite3::Database.new("welp.db")
 db.results_as_hash = true
@@ -40,16 +45,24 @@ SQL
 db.execute_batch(create_table_cmd)
 
 
-10.times do
-  create_user(db, Faker::Name.first_name, Faker::Name.last_name)
-end
+# 10.times do
+#   create_user(db, Faker::Name.first_name, Faker::Name.last_name)
+# end
 
-20.times do 
-	create_business(db, Faker::Company.name)
-end
+# 20.times do 
+# 	create_business(db, Faker::Company.name)
+# end
 
-# kittens = db.execute("SELECT * FROM kittens")
-# kittens.each do |kitten|
+# 5.times do 
+# 	create_review(db)
+# end
+
+reviews = db.execute("SELECT businesses.name, reviews.stars, reviews.comment, users.first_name, users.last_name FROM reviews
+	JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id")
+p reviews;
+
+
+# reviews.each do |review|
 #  puts "#{kitten['name']} is #{kitten['age']}"
 # end
 
