@@ -6,6 +6,9 @@ def create_user(db, first_name, last_name)
    db.execute("INSERT INTO users (first_name, last_name) VALUES (?, ?)", [first_name, last_name])
 end
 
+def create_business(db,name)
+	db.execute("INSERT INTO businesses (name) VALUES (?)", [name])
+end
 
 # create SQLite3 database
 db = SQLite3::Database.new("welp.db")
@@ -41,6 +44,9 @@ db.execute_batch(create_table_cmd)
   create_user(db, Faker::Name.first_name, Faker::Name.last_name)
 end
 
+20.times do 
+	create_business(db, Faker::Company.name)
+end
 
 # kittens = db.execute("SELECT * FROM kittens")
 # kittens.each do |kitten|
