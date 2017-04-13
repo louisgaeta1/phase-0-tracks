@@ -1,0 +1,18 @@
+div {
+	display: inline-block;
+}
+
+
+div div {
+
+	background-color: blue;
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 10px;
+
+}
+
+button {
+	width: 100px;
+}
